@@ -89,13 +89,18 @@
     <h1 class="glitch" data-text="Save the Date">Save the Date</h1>
     <h2>01/12/2024</h2>
     <p>🎵 Música: *Party Favor* - Billie Eilish 🎵</p>
-    <audio id="partyAudio" autoplay loop muted>
-        <source src="https://raw.githubusercontent.com/Carloshenriquept/Party-favor-/main/party-favor.mp3" type="audio/mpeg">
+
+    <!-- Áudio com fonte corrigida -->
+    <audio id="partyAudio" loop muted>
+        <source src="https://github.com/Carloshenriquept/Party-favor-/raw/refs/heads/main/party-favor.mp3" type="audio/mpeg">
         Seu navegador não suporta o elemento de áudio.
     </audio>
-    <h3>Prepare-se para o dia <span class="date">01.12.2024</span></h3>
+
+    <h3>Prepare-se para o dia <span class="date">16/12/2024</span></h3>
     <p>O controle está nas mãos da rainha... você está pronto?</p>
-    <p>blosh-plaks-cajduha-pudkaiejd</p>
+    <p>blosh-plaks-cajduha-pudkaiejd<p>
+    
+    <!-- Botão para ativar o som -->
     <button id="enableAudio">Ativar Som</button>
 
     <script>
