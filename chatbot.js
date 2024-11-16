@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,55 +13,9 @@
             padding: 50px;
         }
 
-        h1, h2 {
+        h1 {
+            font-size: 3rem;
             text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
-        }
-
-        .glitch {
-            font-size: 2rem;
-            display: inline-block;
-            position: relative;
-        }
-
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: #00ff00;
-            background: black;
-            clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%);
-            animation: glitch-anim 2s infinite;
-        }
-
-        .glitch::after {
-            clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0 100%);
-            animation: glitch-anim 2s infinite reverse;
-        }
-
-        @keyframes glitch-anim {
-            0% {
-                transform: translate(0, 0);
-            }
-            25% {
-                transform: translate(3px, -3px);
-            }
-            50% {
-                transform: translate(-3px, 3px);
-            }
-            75% {
-                transform: translate(2px, -2px);
-            }
-            100% {
-                transform: translate(0, 0);
-            }
-        }
-
-        audio {
-            margin-top: 20px;
-            outline: none;
-            width: 80%;
         }
 
         .date {
@@ -69,55 +23,44 @@
             font-weight: bold;
         }
 
-        #enableAudio {
+        button {
             background-color: #00ff00;
             border: none;
             color: black;
             padding: 10px 20px;
-            font-size: 1rem;
+            font-size: 1.2rem;
             margin-top: 20px;
             cursor: pointer;
             border-radius: 5px;
         }
 
-        #enableAudio:hover {
+        button:hover {
             background-color: #009900;
+        }
+
+        p {
+            font-size: 1.2rem;
         }
     </style>
 </head>
 <body>
-    <h1 class="glitch" data-text="Save the Date">Save the Date</h1>
+
+    <h1>Save the Date</h1>
     <h2>01/12/2024</h2>
-    <p>🎵 Música: *Party Favor* - Billie Eilish 🎵</p>
-
-    <!-- Áudio com fonte corrigida -->
-    <audio id="partyAudio" loop muted>
-        <source src="https://github.com/Carloshenriquept/Party-favor-/raw/refs/heads/main/party-favor.mp3" type="audio/mpeg">
-        Seu navegador não suporta o elemento de áudio.
-    </audio>
-
-    <h3>Prepare-se para o dia <span class="date">16/12/2024</span></h3>
-    <p>O controle está nas mãos da rainha... você está pronto?</p>
-    <p>blosh-plaks-cajduha-pudkaiejd<p>
-    
-    <!-- Botão para ativar o som -->
-    <button id="enableAudio">Ativar Som</button>
+    <p>🎉 Prepare-se para o evento! 🎉</p>
+    <button id="showMessage">Clique para mais informações</button>
+    <p id="message" style="display: none; color: yellow;">O evento vai começar no dia <span class="date">16/12/2024</span>.</p>
 
     <script>
-        const audio = document.getElementById('partyAudio');
-        const button = document.getElementById('enableAudio');
+        // Função para mostrar a mensagem quando o botão for clicado
+        const button = document.getElementById('showMessage');
+        const message = document.getElementById('message');
 
-        // Tentar ativar o som ao clicar no botão
-        button.addEventListener('click', () => {
-            audio.muted = false;
-            audio.play();
-            button.style.display = 'none'; // Esconde o botão após ativar o som
+        button.addEventListener('click', function() {
+            message.style.display = 'block'; // Mostra a mensagem
+            button.style.display = 'none';   // Esconde o botão após o clique
         });
-
-        // Tentar ativar o som ao interagir com qualquer parte da página
-        document.body.addEventListener('click', () => {
-            audio.muted = false;
-        }, { once: true });
     </script>
+
 </body>
 </html>
